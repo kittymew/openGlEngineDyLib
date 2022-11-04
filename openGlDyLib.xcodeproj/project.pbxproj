@@ -12,11 +12,11 @@
 		B34203F829140CD50043AAEC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34203F729140CD50043AAEC /* Cocoa.framework */; };
 		B34203FB29140D230043AAEC /* GLEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B34203F929140D230043AAEC /* GLEngine.cpp */; };
 		B34203FC29140D230043AAEC /* GLEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = B34203FA29140D230043AAEC /* GLEngine.h */; };
-		B34203FE29140DA70043AAEC /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B34203FD29140DA70043AAEC /* libglfw3.a */; };
-		B342040029140DC00043AAEC /* libglad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B34203FF29140DC00043AAEC /* libglad.a */; };
 		B342040429140FD90043AAEC /* Singleton.h in Headers */ = {isa = PBXBuildFile; fileRef = B342040229140FD90043AAEC /* Singleton.h */; };
 		B3420407291410E50043AAEC /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3420405291410E40043AAEC /* Object.cpp */; };
 		B3420408291410E50043AAEC /* Object.h in Headers */ = {isa = PBXBuildFile; fileRef = B3420406291410E40043AAEC /* Object.h */; };
+		B3ECDD1929149B09001CF6B2 /* libglad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3ECDD1729149B09001CF6B2 /* libglad.a */; };
+		B3ECDD1A29149B09001CF6B2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3ECDD1829149B09001CF6B2 /* libglfw3.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,11 +26,11 @@
 		B34203F729140CD50043AAEC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B34203F929140D230043AAEC /* GLEngine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GLEngine.cpp; sourceTree = "<group>"; };
 		B34203FA29140D230043AAEC /* GLEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLEngine.h; sourceTree = "<group>"; };
-		B34203FD29140DA70043AAEC /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = "vcpkg/installed/arm64-osx/lib/libglfw3.a"; sourceTree = "<group>"; };
-		B34203FF29140DC00043AAEC /* libglad.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglad.a; path = "vcpkg/installed/arm64-osx/lib/libglad.a"; sourceTree = "<group>"; };
 		B342040229140FD90043AAEC /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		B3420405291410E40043AAEC /* Object.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
 		B3420406291410E40043AAEC /* Object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		B3ECDD1729149B09001CF6B2 /* libglad.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglad.a; path = "lib/installed/arm64-osx/lib/libglad.a"; sourceTree = "<group>"; };
+		B3ECDD1829149B09001CF6B2 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = "lib/installed/arm64-osx/lib/libglfw3.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,8 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B342040029140DC00043AAEC /* libglad.a in Frameworks */,
-				B34203FE29140DA70043AAEC /* libglfw3.a in Frameworks */,
+				B3ECDD1929149B09001CF6B2 /* libglad.a in Frameworks */,
+				B3ECDD1A29149B09001CF6B2 /* libglfw3.a in Frameworks */,
 				B34203F829140CD50043AAEC /* Cocoa.framework in Frameworks */,
 				B34203F629140CCD0043AAEC /* IOKit.framework in Frameworks */,
 				B34203F429140CB30043AAEC /* OpenGL.framework in Frameworks */,
@@ -73,8 +73,8 @@
 		B34203F229140CB30043AAEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B34203FF29140DC00043AAEC /* libglad.a */,
-				B34203FD29140DA70043AAEC /* libglfw3.a */,
+				B3ECDD1729149B09001CF6B2 /* libglad.a */,
+				B3ECDD1829149B09001CF6B2 /* libglfw3.a */,
 				B34203F729140CD50043AAEC /* Cocoa.framework */,
 				B34203F529140CCD0043AAEC /* IOKit.framework */,
 				B34203F329140CB30043AAEC /* OpenGL.framework */,
@@ -276,10 +276,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/vcpkg/installed/arm64-osx/include";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/vcpkg/installed/arm64-osx/include",
+					"$(PROJECT_DIR)/lib/installed/arm64-osx/include",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/vcpkg/installed/arm64-osx/lib",
+					"$(PROJECT_DIR)/lib/installed/arm64-osx/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -293,10 +297,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/vcpkg/installed/arm64-osx/include";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/vcpkg/installed/arm64-osx/include",
+					"$(PROJECT_DIR)/lib/installed/arm64-osx/include",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/vcpkg/installed/arm64-osx/lib",
+					"$(PROJECT_DIR)/lib/installed/arm64-osx/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
