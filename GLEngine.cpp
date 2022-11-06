@@ -11,6 +11,9 @@
 
 #include "Object.h"
 
+#define EXPORT __attribute__((visibility("default")))
+
+EXPORT
 bool GLEngine::init()
 {
     bool ret = initOpenGL();
@@ -209,6 +212,7 @@ bool GLEngine::initShader()
     return true;
 }
 
+EXPORT
 void GLEngine::update()
 {
     for(Object* pObj : vecObj_)
@@ -223,6 +227,7 @@ void GLEngine::update()
     }
 }
 
+EXPORT
 void GLEngine::render()
 {
     // 렌더링
@@ -240,6 +245,7 @@ void GLEngine::render()
     glfwPollEvents(); // 이벤트가 발생하였는지 확인
 }
 
+EXPORT
 void GLEngine::destroy()
 {
     for(Object* pObj : vecObj_)

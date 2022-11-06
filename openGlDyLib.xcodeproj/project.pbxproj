@@ -276,10 +276,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/vcpkg/installed/arm64-osx/include",
-					"$(PROJECT_DIR)/lib/installed/arm64-osx/include",
-				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/lib/installed/arm64-osx/include";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/vcpkg/installed/arm64-osx/lib",
@@ -297,10 +294,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/vcpkg/installed/arm64-osx/include",
-					"$(PROJECT_DIR)/lib/installed/arm64-osx/include",
-				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/lib/installed/arm64-osx/include";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/vcpkg/installed/arm64-osx/lib",

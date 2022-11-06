@@ -13,11 +13,9 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include "Singleton.h"
-
 class Object;
 
-class GLEngine : public Singleton<GLEngine>
+class GLEngine
 {
 private:
     class GLFWwindow* window_;
@@ -31,12 +29,11 @@ private:
     bool isEnd_ = false;
     
 public:
-    bool init() override;
+    bool init();
     
     bool initOpenGL();
     bool initVertexes();
     bool initShader();
-    
     
     void initTriangleVertex();
     void initRectangleVertex();
